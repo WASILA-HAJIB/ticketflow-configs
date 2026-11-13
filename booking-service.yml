@@ -1,0 +1,17 @@
+server:
+  port: 8083
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,refresh
+
+spring:
+  cloud:
+    openfeign:
+      client:
+        config:
+          event-service:
+            connectTimeout: 2000
+            readTimeout: 3000
