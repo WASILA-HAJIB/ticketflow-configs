@@ -2,6 +2,8 @@ server:
   port: 8080
 
 spring:
+  application:
+    name: api-gateway
   cloud:
     gateway:
       server:
@@ -20,7 +22,7 @@ spring:
             - id: event-service
               uri: lb://event-service
               predicates:
-                - Path=/api/events/**
+                - Path=/api/v1/events/**   # <-- CORRIGe: ajout de /v1/ 
 
             - id: booking-service
               uri: lb://booking-service
